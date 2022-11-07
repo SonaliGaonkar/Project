@@ -9,19 +9,14 @@ public:
 public:
     int availability()
     {
-        std::cout << "\nEnter the available rooms in hotel.";
-        std::cin >> Qrooms;
-        std::cout << "\nEnter food Details.";
-        std::cout << "\nEnter amount of burger available.";
-        std::cin >> Qburger;
-        std::cout << "\nEnter amount of pasta available.";
-        std::cin >> Qpasta;
-        std::cout << "\nEnter amount of sandwich available.";
-        std::cin >> Qsandwich;
-        std::cout << "\nEnter amount of frenchfries available.";
-        std::cin >> Qfrenchfries;
-        std::cout << "\nEnter amount of noodles available.";
-        std::cin >> Qnoodles;
+        std::cout << "\n available rooms in hotel are : " << Qrooms;
+        ;
+        std::cout << "\n food Details.";
+        std::cout << "\n amount of burger available : " << Qburger;
+        std::cout << "\n amount of pasta available : " << Qpasta;
+        std::cout << "\n amount of sandwich available : " << Qsandwich;
+        std::cout << "\n amount of frenchfries available : " << Qfrenchfries;
+        std::cout << "\n amount of noodles available : " << Qnoodles;
     }
 };
 class Customer : public HotelManagement
@@ -42,14 +37,16 @@ public:
             std::cout << quantity << " rooms are alloted to you.";
             Trooms = quantity * 1200;
             std::cout << "\nTotal cost for " << quantity << " rooms is : " << Trooms;
-            std::cout << "\nWould you like to order food else (1 = yes | 0 = no) : ";
+            std::cout << "\nWould you like to order food (1 = yes | 0 = no) : ";
             std::cin >> c;
             if (c == 1)
             {
                 foodServices();
             }
             else
-                return;
+                std::cout << "Total cost of room is : " << Trooms;
+                std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
+            return;
         }
         else
         {
@@ -59,7 +56,7 @@ public:
     void foodServices()
     {
         int b;
-        std::cout << "Below is list of available food items.";
+        std::cout << "\n\nBelow is list of available food items.";
         std::cout << "\n1. Burger       -Rs 50.";
         std::cout << "\n2. Pasta        -Rs 60.";
         std::cout << "\n3. Sandwich     -Rs 40. ";
@@ -199,10 +196,10 @@ public:
 };
 int main()
 {
-    int a, q;
+    int a, q, d;
     std::cout << "*******WELCOME******** ";
-    std::cout << "\n1. Customer Services";
-    std::cout << "\n2. Admin Login.";
+    std::cout << "\n1. Check Availability";
+    std::cout << "\n2. Customer Services.";
     std::cout << "\n3. Exit";
     HotelManagement h;
     Customer c;
@@ -212,6 +209,16 @@ int main()
     switch (a)
     {
     case 1:
+        h.availability();
+        std::cout << "\nWould you like to book room or order food (1 = yes | 0 = no): ";
+        std::cin >> d;
+        {
+            if (d == 0)
+            {
+                break;
+            }
+        }
+    case 2:
         std::cout << "\nSelect services. ";
         std::cout << "\n1. Room Booking. ";
         std::cout << "\n2. Food ordering. ";
@@ -227,8 +234,9 @@ int main()
             break;
         }
         break;
-    case 2:
-        h.availability();
+
+    case 3:
         return 0;
     }
+    return 0;
 }
