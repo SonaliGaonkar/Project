@@ -13,9 +13,10 @@ private:
     // TOTAL COST
     float Trooms = 0, Tpasta = 0, Tburger = 0, Tsandwich = 0, Tfrenchfries = 0, Tnoodles = 0;
     int quantity;
-    int choice, c;
+    int choice, c,b;
 
 public:
     void rooms();
-    void foodServices();
+    int foodServices();
+    
 };
