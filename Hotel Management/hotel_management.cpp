@@ -3,13 +3,8 @@ using namespace std;
 class HotelManagement
 {
 public:
-    int quantity;
-    int choice;
     // availabilty of items
-    float Qrooms = 10, Qpasta = 0, Qburger = 10;
-    float Srooms = 0, Spasta = 0, Sburger = 0;
-
-    float Trooms = 0, Tpasta = 0, Tburger = 0;
+    float Qrooms = 10, Qpasta = 10, Qburger = 10, Qsandwich = 10, Qfrenchfries = 10, Qnoodles = 10;
 
 public:
     int availability()
@@ -25,6 +20,12 @@ public:
 };
 class Customer : public HotelManagement
 {
+private:
+    // TOTAL COST
+    float Trooms, Tpasta, Tburger, Tsandwich, Tfrenchfries, Tnoodles;
+    int quantity;
+    int choice;
+
 public:
     void rooms()
     {
@@ -43,6 +44,7 @@ public:
     }
     void foodServices()
     {
+        int b;
         std::cout << "Below is list of available food items.";
         std::cout << "\n1. Burger       -Rs 50.";
         std::cout << "\n2. Pasta        -Rs 60.";
@@ -61,10 +63,47 @@ public:
                 std::cout << quantity << " burgers are available, collect your order from counter.";
                 Tburger = quantity * 50;
                 std::cout << "\nTotal cost for " << quantity << " burger is : " << Tburger;
+                std::cout << "\nWould you like to order anything else (1 = yes | 0 = no) : ";
+                std::cin >> b;
+                if (b == 1)
+                {
+                    foodServices();
+                }
+                else
+                {
+                    std::cout << "\n Your total bill is : " << Tburger + Tpasta + Tsandwich + Tfrenchfries + Tnoodles;
+                    std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
+                    return;
+                }
             }
             else
             {
                 std::cout << "\nOnly" << Qburger - quantity << "are available";
+            }
+        case 2:
+            std::cout << "\nEnter number of Pasta you want to order : ";
+            std::cin >> quantity;
+            if (Qpasta >= quantity)
+            {
+                std::cout << quantity << " Pasta are available, collect your order from counter.";
+                Tpasta = quantity * 50;
+                std::cout << "\nTotal cost for " << quantity << " Pasta is : " << Tpasta;
+                std::cout << "\nWould you like to order anything else (1 = yes | 0 = no) : ";
+                std::cin >> b;
+                if (b == 1)
+                {
+                    foodServices();
+                }
+                else
+                {
+                    std::cout << "\n Your total bill is : " << Tburger + Tpasta + Tsandwich + Tfrenchfries + Tnoodles;
+                    std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
+                    return;
+                }
+            }
+            else
+            {
+                std::cout << "\nOnly" << Qpasta - quantity << "are available";
             }
         }
     }
@@ -72,7 +111,7 @@ public:
 int main()
 {
     int a, q;
-
+    std::cout << "*******WELCOME******** ";
     std::cout << "\n1. Customer Services";
     std::cout << "\n2. Admin Login.";
     std::cout << "\n3. Exit";
