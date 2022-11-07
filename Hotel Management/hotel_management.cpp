@@ -30,7 +30,7 @@ private:
     // TOTAL COST
     float Trooms = 0, Tpasta = 0, Tburger = 0, Tsandwich = 0, Tfrenchfries = 0, Tnoodles = 0;
     int quantity;
-    int choice;
+    int choice, c;
 
 public:
     void rooms()
@@ -42,6 +42,14 @@ public:
             std::cout << quantity << " rooms are alloted to you.";
             Trooms = quantity * 1200;
             std::cout << "\nTotal cost for " << quantity << " rooms is : " << Trooms;
+            std::cout << "\nWould you like to order food else (1 = yes | 0 = no) : ";
+            std::cin >> c;
+            if (c == 1)
+            {
+                foodServices();
+            }
+            else
+                return;
         }
         else
         {
@@ -127,7 +135,7 @@ public:
                 }
                 else
                 {
-                    std::cout << "\n Your total bill is : " << Tburger + Tsandwich + Tsandwich + Tfrenchfries + Tnoodles;
+                    std::cout << "\n Your total bill is : " << Tburger + Tpasta + Tsandwich + Tfrenchfries + Tnoodles;
                     std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
                     return;
                 }
@@ -152,7 +160,7 @@ public:
                 }
                 else
                 {
-                    std::cout << "\n Your total bill is : " << Tburger + Tfrenchfries + Tsandwich + Tfrenchfries + Tnoodles;
+                    std::cout << "\n Your total bill is : " << Tburger + Tpasta + Tsandwich + Tfrenchfries + Tnoodles;
                     std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
                     return;
                 }
@@ -177,7 +185,7 @@ public:
                 }
                 else
                 {
-                    std::cout << "\n Your total bill is : " << Tburger + Tnoodles + Tsandwich + Tfrenchfries + Tnoodles;
+                    std::cout << "\n Your total bill is : " << Tburger + Tpasta + Tsandwich + Tfrenchfries + Tnoodles;
                     std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
                     return;
                 }
