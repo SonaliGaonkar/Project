@@ -24,14 +24,14 @@ public:
 
 int HotelManagement::availability()
 {
-    std::cout << "\n available rooms in hotel are : " << Qrooms;
+    std::cout << "\n Available rooms in hotel are : " << Qrooms;
     ;
-    std::cout << "\n food Details.";
-    std::cout << "\n amount of burger available : " << Qburger;
-    std::cout << "\n amount of pasta available : " << Qpasta;
-    std::cout << "\n amount of sandwich available : " << Qsandwich;
-    std::cout << "\n amount of frenchfries available : " << Qfrenchfries;
-    std::cout << "\n amount of noodles available : " << Qnoodles;
+    std::cout << "\n Food Details.";
+    std::cout << "\n Amount of burger available : " << Qburger;
+    std::cout << "\n Amount of pasta available : " << Qpasta;
+    std::cout << "\n Amount of sandwich available : " << Qsandwich;
+    std::cout << "\n Amount of frenchfries available : " << Qfrenchfries;
+    std::cout << "\n Amount of noodles available : " << Qnoodles;
 }
 
 void Customer::rooms()
@@ -56,7 +56,17 @@ void Customer::rooms()
     }
     else
     {
-        std::cout << "\nOnly" << Qrooms - quantity << "are available";
+        std::cout << "\nSorry, no enough rooms available. Only " << Qrooms << " rooms are available";
+        std::cout << "\nWould you like to room book  (1 = yes | 0 = no) : ";
+        std::cin >> c;
+        if (c == 1)
+        {
+            rooms();
+        }
+        else
+
+            std::cout << "\n\n*****************THANK YOU VISIT AGAIN****************";
+        return;
     }
 }
 void Customer::foodServices()
