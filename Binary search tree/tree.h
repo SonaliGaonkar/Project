@@ -7,4 +7,6 @@ public:
     Node *root;
     Tree();
     void insertNode(int);
+    Node* deleteNode(Node *, int);
+    void findMax(Node*);
 };

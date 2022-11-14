@@ -15,5 +15,11 @@ int main()
         std::cout << "Please insert node data : ";
         std::cin >> d;
         t.insertNode(d);
+        break;
+
+    case 2:
+        std::cout << "please Insert data of Node you want to delete : ";
+        std::cin >> d;
+        t.root = t.deleteNode(t.root, d);
     }
 }
