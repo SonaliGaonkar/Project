@@ -13,4 +13,3 @@ Node::Node(int d)
     right = nullptr;
     data = d;
 }
-
