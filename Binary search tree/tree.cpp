@@ -103,6 +103,15 @@ void Tree::inorder(Node *root)
         inorder(root->right);
     }
 }
+void Tree::postorder(Node* root)
+{
+	if (root)
+	{
+		postorder(root->left);
+		postorder(root->right);
+		std::cout << root->data << std::endl;
+	}
+}
 Node *Tree::search(Node *root, int d)
 {
     if (root == nullptr)

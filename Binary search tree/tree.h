@@ -12,4 +12,5 @@ public:
     Node* search(Node*, int);
     void preorder(Node*);
     void inorder(Node*);
+    void postorder(Node*);
 };
