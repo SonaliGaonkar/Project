@@ -5,6 +5,7 @@ void myData()
 {
     std::cout << "\n\n1. Add a node";
     std::cout << "\n\n2. Delete a node";
+    std::cout << "\n\n3. Search data";
 
     std::cout << "\n\nEnter your choice : ";
     std::cin >> choice;
@@ -27,6 +28,24 @@ void myData()
         std::cout << "please Insert data of Node you want to delete : ";
         std::cin >> d;
         t.root = t.deleteNode(t.root, d);
+        break;
+
+    case 3:
+
+        std::cout << "please Insert data of Node you want to search :"
+                  << "\n";
+        std::cin >> d;
+        Node *temp = t.search(t.root, d);
+        if (temp != nullptr)
+        {
+            std::cout << "Number Found"
+                      << "\n";
+        }
+        else
+        {
+            std::cout << "not found"
+                      << "\n";
+        }
     }
 }
 int main()

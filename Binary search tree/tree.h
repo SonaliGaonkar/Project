@@ -9,4 +9,5 @@ public:
     void insertNode(int);
     Node* deleteNode(Node *, int);
     void findMax(Node*);
+    Node* search(Node*, int);
 };

@@ -54,7 +54,7 @@ Node *Tree::deleteNode(Node *root, int d)
     {
         root->right = deleteNode(root->right, d);
     }
-    else
+    else                         // if d==root
     {
         if (root->left && root->right)
         {
@@ -83,4 +83,15 @@ void Tree::findMax(Node* root)
 		v.push_back(root->data);
 		findMax(root->right);
 	}
+}
+Node* Tree::search(Node* root, int d)
+{
+	if (root == nullptr)
+		return (nullptr);
+	else if (d < root->data)
+		return (search(root->left, d));
+	else if (d > root->data)
+		return (search(root->right, d));
+	return (root);
+
 }
