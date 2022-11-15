@@ -5,7 +5,8 @@ void myData()
 {
     std::cout << "\n\n1. Add a node";
     std::cout << "\n\n2. Delete a node";
-    std::cout << "\n\n3. Search data";
+    std::cout << "\n\n3. print data in preorder";
+    std::cout << "\n\n4. Search data";
 
     std::cout << "\n\nEnter your choice : ";
     std::cin >> choice;
@@ -31,7 +32,10 @@ void myData()
         break;
 
     case 3:
+        t.preorder(t.root);
+        break;
 
+    case 4:
         std::cout << "please Insert data of Node you want to search :"
                   << "\n";
         std::cin >> d;
@@ -46,6 +50,7 @@ void myData()
             std::cout << "not found"
                       << "\n";
         }
+        break;
     }
 }
 int main()

@@ -84,6 +84,15 @@ void Tree::findMax(Node* root)
 		findMax(root->right);
 	}
 }
+void Tree::preorder(Node* root)
+{
+	if (root)
+	{
+		std::cout << root->data << "\n";
+		preorder(root->left);
+		preorder(root->right);
+	}
+}
 Node* Tree::search(Node* root, int d)
 {
 	if (root == nullptr)

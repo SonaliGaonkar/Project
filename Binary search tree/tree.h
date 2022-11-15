@@ -10,4 +10,5 @@ public:
     Node* deleteNode(Node *, int);
     void findMax(Node*);
     Node* search(Node*, int);
+    void preorder(Node*);
 };
