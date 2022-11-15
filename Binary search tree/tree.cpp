@@ -54,7 +54,7 @@ Node *Tree::deleteNode(Node *root, int d)
     {
         root->right = deleteNode(root->right, d);
     }
-    else                         // if d==root
+    else // if d==root
     {
         if (root->left && root->right)
         {
@@ -75,32 +75,41 @@ Node *Tree::deleteNode(Node *root, int d)
 
     return (root);
 }
-void Tree::findMax(Node* root)
+void Tree::findMax(Node *root)
 {
-	if (root)
-	{
-		findMax(root->left);
-		v.push_back(root->data);
-		findMax(root->right);
-	}
+    if (root)
+    {
+        findMax(root->left);
+        v.push_back(root->data);
+        findMax(root->right);
+    }
 }
-void Tree::preorder(Node* root)
+void Tree::preorder(Node *root)
 {
-	if (root)
-	{
-		std::cout << root->data << "\n";
-		preorder(root->left);
-		preorder(root->right);
-	}
+    if (root)
+    {
+        std::cout << root->data << "\n";
+        preorder(root->left);
+        preorder(root->right);
+    }
 }
-Node* Tree::search(Node* root, int d)
+void Tree::inorder(Node *root)
 {
-	if (root == nullptr)
-		return (nullptr);
-	else if (d < root->data)
-		return (search(root->left, d));
-	else if (d > root->data)
-		return (search(root->right, d));
-	return (root);
+    if (root)
+    {
 
+        inorder(root->left);
+        std::cout << root->data << "\n";
+        inorder(root->right);
+    }
+}
+Node *Tree::search(Node *root, int d)
+{
+    if (root == nullptr)
+        return (nullptr);
+    else if (d < root->data)
+        return (search(root->left, d));
+    else if (d > root->data)
+        return (search(root->right, d));
+    return (root);
 }

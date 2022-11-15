@@ -11,4 +11,5 @@ public:
     void findMax(Node*);
     Node* search(Node*, int);
     void preorder(Node*);
+    void inorder(Node*);
 };

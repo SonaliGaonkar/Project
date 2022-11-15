@@ -5,7 +5,8 @@ void myData()
 {
     std::cout << "\n\n1. Add a node";
     std::cout << "\n\n2. Delete a node";
-    std::cout << "\n\n3. print data in preorder";
+    std::cout << "\n\n3. print data in Preorder";
+    std::cout << "\n\n3. print data in Inorder";
     std::cout << "\n\n4. Search data";
 
     std::cout << "\n\nEnter your choice : ";
@@ -15,9 +16,10 @@ void myData()
     case 1:
         std::cout << "How many values do you want enter : ";
         std::cin >> n;
+        std::cout << "Please enter node data :";
         for (int i = 0; i < n; i++)
         {
-            std::cout << "Please enter node data :";
+            
             std::cin >> d;
             t.insertNode(d);
         }
@@ -29,13 +31,23 @@ void myData()
         std::cout << "please Insert data of Node you want to delete : ";
         std::cin >> d;
         t.root = t.deleteNode(t.root, d);
+        std::cout << "Would you like to perform any other task ";
+        myData();
         break;
 
     case 3:
         t.preorder(t.root);
+        std::cout << "Would you like to perform any other task ";
+        myData();
         break;
 
     case 4:
+        t.inorder(t.root);
+        std::cout << "Would you like to perform any other task ";
+        myData();
+        break;
+
+    case 5:
         std::cout << "please Insert data of Node you want to search :"
                   << "\n";
         std::cin >> d;
@@ -50,6 +62,8 @@ void myData()
             std::cout << "not found"
                       << "\n";
         }
+        std::cout << "Would you like to perform any other task ";
+        myData();
         break;
     }
 }
